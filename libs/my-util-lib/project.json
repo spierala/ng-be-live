@@ -1,0 +1,12 @@
+{
+  "name": "my-util-lib",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/my-util-lib/src",
+  "targets": {
+    "build": {
+      "executor": "@bg-hoard/internal-plugin:build"
+    }
+  },
+  "tags": []
+}
