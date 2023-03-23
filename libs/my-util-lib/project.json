@@ -4,9 +4,7 @@
   "projectType": "library",
   "sourceRoot": "libs/my-util-lib/src",
   "targets": {
-    "build": {
-      "executor": "@bg-hoard/internal-plugin:build"
-    }
+   
   },
   "tags": []
 }
