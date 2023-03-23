@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Game } from '@bg-hoard/util-interface';
+import { formatRating } from '@bg-hoard/store/util-formatters';
 
 const games: Game[] = [
   {
