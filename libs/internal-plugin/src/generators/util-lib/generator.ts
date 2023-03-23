@@ -51,7 +51,8 @@ function addFiles(tree: Tree, options: NormalizedSchema) {
 export default async function (tree: Tree, options: UtilLibGeneratorSchema) {
   libraryGenerator(tree, {
     name: 'util-' + options.name,
-    directory: options.directory
+    directory: options.directory,
+    tags: `type:util, scope:${options.directory}`
   });
   await formatFiles(tree);
 }
