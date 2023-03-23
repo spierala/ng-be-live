@@ -60,5 +60,6 @@
       }
     }
   },
-  "tags": ["scope:store", "type:api"]
+  "tags": ["scope:api", "type:app"],
+  "implicitDependencies": []
 }

@@ -59,5 +59,6 @@
       }
     }
   },
-  "tags": ["scope:shared", "type:ui"]
+  "tags": ["scope:store", "type:ui"],
+  "implicitDependencies": []
 }

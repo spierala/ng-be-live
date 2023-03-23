@@ -26,5 +26,6 @@
       }
     }
   },
-  "tags": ["scope:store", "type:util"]
+  "tags": ["scope:shared", "type:util"],
+  "implicitDependencies": []
 }
