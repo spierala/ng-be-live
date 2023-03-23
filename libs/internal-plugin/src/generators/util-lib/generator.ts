@@ -9,6 +9,7 @@ import {
 } from '@nrwl/devkit';
 import * as path from 'path';
 import { UtilLibGeneratorSchema } from './schema';
+import { libraryGenerator } from '@nrwl/workspace/generators';
 
 interface NormalizedSchema extends UtilLibGeneratorSchema {
   projectName: string;
@@ -48,22 +49,11 @@ function addFiles(tree: Tree, options: NormalizedSchema) {
 }
 
 export default async function (tree: Tree, options: UtilLibGeneratorSchema) {
-  const normalizedOptions = normalizeOptions(tree, options);
-  addProjectConfiguration(
-    tree,
-    normalizedOptions.projectName,
-    {
-      root: normalizedOptions.projectRoot,
-      projectType: 'library',
-      sourceRoot: `${normalizedOptions.projectRoot}/src`,
-      targets: {
-        build: {
-          executor: "@bg-hoard/internal-plugin:build",
-        },
-      },
-      tags: normalizedOptions.parsedTags,
-    }
-  );
-  addFiles(tree, normalizedOptions);
+  libraryGenerator(tree, {
+    name: 'util-' + options.name,
+    directory: options.directory
+  });
   await formatFiles(tree);
 }
+
+

@@ -21,7 +21,16 @@
     }, 
     "directory": {
       "type": "string",
-      "description": "A directory where the project is placed"
+      "description": "Which folder name?",
+      "x-prompt": {
+        "message": "msg: Which folder name?",
+        "type": "list",
+        "items": [
+          "store", 
+          "api",
+          "shared"
+        ]
+      }
     }
   },
   "required": ["name"]
