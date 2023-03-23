@@ -143,6 +143,22 @@
       "cli": "nx",
       "package": "@nrwl/nx-workshop",
       "name": "complete-lab-16"
+    },
+    {
+      "version": "0.1.17",
+      "description": "Complete Lab 17",
+      "factory": "./src/migrations/complete-lab-17/complete-lab-17",
+      "cli": "nx",
+      "package": "@nrwl/nx-workshop",
+      "name": "complete-lab-17"
+    },
+    {
+      "version": "0.1.18",
+      "description": "Complete Lab 18",
+      "factory": "./src/migrations/complete-lab-18/complete-lab-18",
+      "cli": "nx",
+      "package": "@nrwl/nx-workshop",
+      "name": "complete-lab-18"
     }
   ]
 }

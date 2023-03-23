@@ -7,14 +7,21 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/store",
         "index": "apps/store/src/index.html",
         "main": "apps/store/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/store/tsconfig.app.json",
-        "assets": ["apps/store/src/favicon.ico", "apps/store/src/assets"],
+        "assets": [
+          "apps/store/src/favicon.ico",
+          "apps/store/src/assets"
+        ],
         "styles": [
           "apps/store/src/styles.css",
           "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css"
@@ -71,14 +78,21 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["apps/store/**/*.ts", "apps/store/**/*.html"]
+        "lintFilePatterns": [
+          "apps/store/**/*.ts",
+          "apps/store/**/*.html"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "apps/store/jest.config.ts",
         "passWithNoTests": true
@@ -89,8 +103,21 @@
           "codeCoverage": true
         }
       }
+    },
+    "deploy": {
+      "executor": "nx:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "surge dist/apps/store ${SURGE_DOMAIN} --token ${SURGE_TOKEN}"
+      },
+      "dependsOn": [
+        "build"
+      ]
     }
   },
-  "tags": ["scope:store", "type:app"],
+  "tags": [
+    "scope:store",
+    "type:app"
+  ],
   "implicitDependencies": []
 }
